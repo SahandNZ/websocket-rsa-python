@@ -1,0 +1,8 @@
+# Environments
+**/venv
+**/env
+
+# Pycahrm
+**/__pycache__
+**/.idea
+
