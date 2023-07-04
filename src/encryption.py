@@ -32,7 +32,7 @@ class RSA:
         self.public_key = public_key
         self.private_key = private_key
 
-    # region server side methods
+    # region client side methods
     def encrypt(self, message: str) -> str:
         return rsa.encrypt(message.encode('ascii'), self.public_key)
 
@@ -41,10 +41,9 @@ class RSA:
             return rsa.verify(message.encode('ascii'), bytes.fromhex(signature), self.public_key) == 'SHA-1'
         except Exception as e:
             return False
-
     # endregion
 
-    # region client side methods
+    # region server side methods
     def decrypt(self, ciphertext: str) -> str:
         return rsa.decrypt(ciphertext, self.private_key).decode('ascii')
 
